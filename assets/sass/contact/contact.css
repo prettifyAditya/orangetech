@@ -1,0 +1,156 @@
+@keyframes shine {
+  from {
+    opacity: 0;
+    left: 0%;
+  }
+  50% {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+    left: 100%;
+  }
+}
+.banner.contact-banner::before {
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.5) 100%), linear-gradient(0deg, rgba(0, 0, 0, 0) 14%, rgba(0, 0, 0, 0.6) 100%);
+}
+.banner.contact-banner .bg {
+  height: 100vh;
+}
+@media only screen and (max-width: 768px) {
+  .banner.contact-banner .bg {
+    height: 70vh;
+  }
+}
+.banner.contact-banner .bg .banner-wrapper {
+  width: 100%;
+  top: unset;
+  bottom: 20%;
+  translate: 0 20%;
+}
+.banner.contact-banner .bg .banner-wrapper .container-fluid .content, .banner.contact-banner .bg .banner-wrapper .container .content {
+  max-width: 450px;
+  margin: 0 auto;
+  text-align: center;
+}
+.banner.contact-banner .bg .banner-wrapper .container-fluid .content h2, .banner.contact-banner .bg .banner-wrapper .container .content h2 {
+  font-weight: 700;
+}
+
+.contact-secA {
+  background: var(--secondary);
+}
+@media only screen and (max-width: 768px) {
+  .contact-secA .contact_wrap {
+    flex-direction: column;
+    justify-content: center;
+    gap: 20px;
+  }
+}
+.contact-secA .contact_wrap .contact_col {
+  padding: 90px 70px;
+  flex: 1;
+  display: flex;
+  gap: 20px;
+}
+.contact-secA .contact_wrap .contact_col:not(:last-child) {
+  border-right: 1px solid rgba(255, 255, 255, 0.1019607843);
+}
+.contact-secA .contact_wrap .contact_col a:not(.cta) {
+  display: block;
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--white);
+  max-width: 230px;
+}
+.contact-secA .contact_wrap .contact_col .cta {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  height: 36px;
+  color: var(--primary);
+  outline: none;
+  margin-top: 20px;
+}
+.contact-secA .contact_wrap .contact_col .cta.whatsapp {
+  border: 1px solid var(--primary);
+  padding: 0 15px;
+  border-radius: 5px;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+.contact-secA .contact_wrap .contact_col .cta svg {
+  width: 24px;
+  height: 24px;
+}
+.contact-secA .contact_wrap .contact_col .icon {
+  flex: 0 1 35px;
+  width: 35px;
+  height: 35px;
+}
+.contact-secA .contact_wrap .contact_col .icon svg {
+  width: 100%;
+  height: 100%;
+}
+.contact-secA .contact_wrap .contact_col .info {
+  flex: 1;
+}
+.contact-secA .contact_wrap .contact_col .info h6 {
+  font-weight: 600;
+  font-size: 24px;
+  color: var(--white);
+  margin-bottom: 5px;
+}
+
+.contact-secB .heading {
+  max-width: 500px;
+  margin: 0 auto 40px;
+  text-align: center;
+}
+.contact-secB .heading h3 {
+  font-size: 36px;
+  line-height: 1.2;
+}
+.contact-secB .form-container {
+  max-width: 500px;
+  margin: 0 auto;
+}
+.contact-secB .form-container .form {
+  --labelbefore: #AFAFAF;
+  --labelafter: var(--primary);
+  --borderbefore: #AFAFAF;
+  --item: 1;
+}
+.contact-secB .form-container .form .phone-field {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.contact-secB .form-container .form .phone-field .iti--separate-dial-code .iti__selected-flag {
+  background-color: unset;
+}
+.contact-secB .form-container .form .form-group input {
+  color: var(--black);
+}
+.contact-secB .form-container .form .btn_wrap .btn {
+  margin: 0 auto;
+  max-width: 180px;
+}
+
+.contact-secC {
+  line-height: 0;
+}
+.contact-secC iframe {
+  height: 600px;
+  filter: grayscale(1);
+  transition: 0.8s ease;
+  border: 0;
+}
+@media only screen and (max-width: 540px) {
+  .contact-secC iframe {
+    height: 400px;
+  }
+}
+.contact-secC iframe:hover {
+  filter: grayscale(0);
+}/*# sourceMappingURL=contact.css.map */

@@ -1,0 +1,116 @@
+@import '../_var'
+
+.banner
+    &.contact-banner
+        &::before
+            background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.5) 100%), linear-gradient(0deg, rgba(0, 0, 0, 0) 14%, rgba(0, 0, 0, 0.6) 100%)
+        .bg 
+            height: 100vh 
+            @include media(768)
+                height: 70vh
+            .banner-wrapper
+                width: 100%
+                top: unset
+                bottom: 20%
+                translate: 0 20%
+                .container-fluid, .container
+                    .content
+                        max-width: 450px
+                        margin: 0 auto
+                        text-align: center
+                        h2
+                            font-weight: 700
+
+.contact-secA
+    background: var(--secondary)
+    .contact_wrap
+        @include media(768)
+            flex-direction: column
+            justify-content: center
+            gap: 20px
+        .contact_col
+            padding: 90px 70px
+            flex: 1
+            display: flex
+            gap: 20px
+            &:not(:last-child)
+                border-right: 1px solid #FFFFFF1A
+            a
+                &:not(.cta)
+                    display: block
+                    font-size: 16px
+                    font-weight: 500
+                    color: $white
+                    max-width: 230px
+            .cta
+                display: flex
+                align-items: center
+                gap: 10px
+                height: 36px
+                color: $primary
+                outline: none
+                margin-top: 20px
+                &.whatsapp
+                    border: 1px solid $primary
+                    padding: 0 15px
+                    border-radius: 5px
+                    width: fit-content
+                svg 
+                    width: 24px
+                    height: 24px
+            .icon
+                flex: 0 1 35px
+                width: 35px
+                height: 35px
+                svg
+                    width: 100%
+                    height: 100%
+            .info
+                flex: 1
+                h6
+                    font-weight: 600
+                    font-size: 24px
+                    color: $white
+                    margin-bottom: 5px
+.contact-secB
+    .heading
+        max-width: 500px
+        margin: 0 auto 40px
+        text-align: center
+        h3
+            font-size: 36px
+            line-height: 1.2
+    .form-container
+        max-width: 500px
+        margin: 0 auto
+        .form 
+            --labelbefore: #AFAFAF 
+            --labelafter: var(--primary)
+            --borderbefore: #AFAFAF
+            --item: 1
+            .phone-field
+                display: flex
+                align-items: center
+                gap: 20px
+                .iti--separate-dial-code 
+                    .iti__selected-flag
+                        background-color: unset
+            .form-group
+                input
+                    color: $black
+            .btn_wrap
+                .btn
+                    margin: 0 auto
+                    max-width: 180px
+
+.contact-secC
+    line-height: 0
+    iframe
+        height: 600px
+        filter: grayscale(1)
+        transition: .8s ease
+        border: 0
+        @include media(540)
+            height: 400px
+        &:hover
+            filter: grayscale(0)

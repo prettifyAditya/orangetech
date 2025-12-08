@@ -1,0 +1,112 @@
+@keyframes shine {
+  from {
+    opacity: 0;
+    left: 0%;
+  }
+  50% {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+    left: 100%;
+  }
+}
+.banner.service-banner::before {
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.5) 100%), linear-gradient(0deg, rgba(0, 0, 0, 0) 14%, rgba(0, 0, 0, 0.6) 100%);
+}
+.banner.service-banner .bg {
+  height: 100vh;
+}
+@media only screen and (max-width: 768px) {
+  .banner.service-banner .bg {
+    height: 70vh;
+  }
+}
+.banner.service-banner .bg .banner-wrapper {
+  width: 100%;
+  top: unset;
+  bottom: 20%;
+  translate: 0 20%;
+}
+.banner.service-banner .bg .banner-wrapper .container-fluid .content, .banner.service-banner .bg .banner-wrapper .container .content {
+  max-width: 450px;
+  margin: 0 auto;
+  text-align: center;
+}
+.banner.service-banner .bg .banner-wrapper .container-fluid .content h2, .banner.service-banner .bg .banner-wrapper .container .content h2 {
+  font-weight: 700;
+}
+
+.service-listingA .service_wrapper {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 15px;
+}
+
+.banner.serviceD-banner::before {
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.5) 100%), linear-gradient(0deg, rgba(0, 0, 0, 0) 14%, rgba(0, 0, 0, 0.6) 100%);
+}
+.banner.serviceD-banner .bg {
+  height: 100vh;
+}
+@media only screen and (max-width: 768px) {
+  .banner.serviceD-banner .bg {
+    height: 70vh;
+  }
+}
+.banner.serviceD-banner .bg .banner-wrapper {
+  width: 100%;
+  top: unset;
+  bottom: 20%;
+  translate: 0 20%;
+}
+.banner.serviceD-banner .bg .banner-wrapper .container-fluid .content h2, .banner.serviceD-banner .bg .banner-wrapper .container .content h2 {
+  font-weight: 700;
+}
+
+.service-detailA .service_wrapper {
+  --gap: 50px;
+  gap: var(--gap);
+}
+.service-detailA .service_wrapper .colA {
+  flex: 1;
+  max-width: calc(70% - var(--gap));
+}
+.service-detailA .service_wrapper .colB {
+  flex: 0 1 30%;
+  max-width: 30%;
+}
+.service-detailA .service_wrapper .colB .form_wrapper {
+  width: 100%;
+  background: var(--gradient-b);
+  padding: 30px 40px;
+  position: sticky;
+  top: calc(var(--headerheight) + 20px);
+}
+.service-detailA .service_wrapper .colB .form_wrapper .title {
+  text-align: center;
+}
+.service-detailA .service_wrapper .colB .form_wrapper .title .icon {
+  max-width: 60px;
+  margin: 0 auto;
+}
+.service-detailA .service_wrapper .colB .form_wrapper .title h4 {
+  font-size: 28px;
+  font-weight: 600;
+}
+.service-detailA .service_wrapper .colB .form_wrapper .title p {
+  color: var(--text);
+  font-weight: 500;
+}
+.service-detailA .service_wrapper .colB .form_wrapper .form {
+  margin-top: 30px;
+  --gaptb: 25px;
+}
+.service-detailA .service_wrapper .colB .form_wrapper .btn_wrap {
+  width: 100%;
+  margin-top: 10px;
+}
+.service-detailA .service_wrapper .colB .form_wrapper .btn_wrap .btn {
+  max-width: 100%;
+  text-transform: uppercase;
+}/*# sourceMappingURL=services.css.map */
