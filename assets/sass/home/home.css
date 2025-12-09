@@ -358,6 +358,9 @@
 .banner.home-banner .bg .banner-wrapper .container-fluid .form-container .form-group.location-icon.active input, .banner.home-banner .bg .banner-wrapper .container .form-container .form-group.location-icon.active input {
   background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxOHB4IiBoZWlnaHQ9IjE4cHgiIHZpZXdCb3g9IjAgMCAyNCAyNCI+Cgk8ZyBmaWxsPSJub25lIj4KCQk8cGF0aCBkPSJNMTIgMmE4IDggMCAwIDEgOCA4YzAgNi41LTggMTItOCAxMnMtOC01LjUtOC0xMmE4IDggMCAwIDEgOC04bTAgNWEzIDMgMCAxIDAgMCA2YTMgMyAwIDAgMCAwLTYiIGNsaXAtcnVsZT0iZXZlbm9kZCIgLz4KCQk8cGF0aCBzdHJva2U9IiMwMDAiIHN0cm9rZS13aWR0aD0iMS41IiBkPSJNMjAgMTBjMCA2LjUtOCAxMi04IDEycy04LTUuNS04LTEyYTggOCAwIDEgMSAxNiAwWiIgLz4KCQk8cGF0aCBzdHJva2U9IiMwMDAiIHN0cm9rZS13aWR0aD0iMS41IiBkPSJNMTUgMTBhMyAzIDAgMSAxLTYgMGEzIDMgMCAwIDEgNiAwWiIgLz4KCTwvZz4KPC9zdmc+);
 }
+.banner.home-banner .bg .banner-wrapper .container-fluid .form-container .form-group label, .banner.home-banner .bg .banner-wrapper .container .form-container .form-group label {
+  color: var(--white);
+}
 .banner.home-banner .bg .banner-wrapper .container-fluid .form-container .form-group label.none, .banner.home-banner .bg .banner-wrapper .container .form-container .form-group label.none {
   opacity: 0;
   visibility: hidden;
@@ -531,6 +534,9 @@
   stroke: var(--primary);
 }
 
+.home-secA {
+  display: none;
+}
 .home-secA .heading {
   text-align: center;
   margin-bottom: 3rem;
@@ -799,15 +805,57 @@
   position: absolute;
   cursor: pointer;
   transform: translate(-50%, -50%);
-  z-index: 2;
 }
-.home-secC .global-container .pointer svg {
+.home-secC .global-container .pointer:hover .point_wrap span {
+  opacity: 1;
+}
+.home-secC .global-container .pointer .point_wrap {
+  position: relative;
+}
+.home-secC .global-container .pointer .point_wrap .icon {
   width: 30px;
   height: 30px;
   animation: blink 2s 0.2s infinite;
 }
-.home-secC .global-container .pointer svg:hover ~ span {
-  opacity: 1;
+.home-secC .global-container .pointer .point_wrap .icon svg {
+  width: 100%;
+  height: 100%;
+}
+.home-secC .global-container .pointer .point_wrap span {
+  display: block;
+  width: -moz-max-content;
+  width: max-content;
+  max-width: 180px;
+  font-size: 14px;
+  background-color: var(--primary);
+  padding: 10px 15px;
+  border-radius: 5px;
+  color: var(--white);
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translate(-50%, -15%);
+  opacity: 0;
+  transition: 0.5s ease;
+  --triangle: 10px;
+}
+@media only screen and (max-width: 540px) {
+  .home-secC .global-container .pointer .point_wrap span {
+    font-size: 12px;
+    max-width: 150px;
+  }
+}
+.home-secC .global-container .pointer .point_wrap span::before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: calc(100% - var(--triangle) / 2);
+  left: 50%;
+  translate: -50% 0;
+  width: var(--triangle);
+  height: var(--triangle);
+  background: var(--primary);
+  transform: rotate(45deg);
 }
 .home-secC .global-container .pointer.point1 {
   right: 30%;
@@ -889,43 +937,6 @@
     top: 28%;
     left: 18%;
   }
-}
-.home-secC .global-container .pointer span {
-  display: block;
-  width: -moz-max-content;
-  width: max-content;
-  max-width: 180px;
-  font-size: 14px;
-  background-color: var(--primary);
-  padding: 10px 15px;
-  border-radius: 5px;
-  color: var(--white);
-  position: absolute;
-  bottom: 100%;
-  left: 50%;
-  transform: translate(-50%, -15%);
-  z-index: 5;
-  opacity: 0;
-  transition: 0.5s ease;
-  --triangle: 10px;
-}
-@media only screen and (max-width: 540px) {
-  .home-secC .global-container .pointer span {
-    font-size: 12px;
-    max-width: 150px;
-  }
-}
-.home-secC .global-container .pointer span::before {
-  content: "";
-  display: block;
-  position: absolute;
-  top: calc(100% - var(--triangle) / 2);
-  left: 50%;
-  translate: -50% 0;
-  width: var(--triangle);
-  height: var(--triangle);
-  background: var(--primary);
-  transform: rotate(45deg);
 }
 
 @keyframes blink {

@@ -246,6 +246,7 @@
                                 input
                                     background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxOHB4IiBoZWlnaHQ9IjE4cHgiIHZpZXdCb3g9IjAgMCAyNCAyNCI+Cgk8ZyBmaWxsPSJub25lIj4KCQk8cGF0aCBkPSJNMTIgMmE4IDggMCAwIDEgOCA4YzAgNi41LTggMTItOCAxMnMtOC01LjUtOC0xMmE4IDggMCAwIDEgOC04bTAgNWEzIDMgMCAxIDAgMCA2YTMgMyAwIDAgMCAwLTYiIGNsaXAtcnVsZT0iZXZlbm9kZCIgLz4KCQk8cGF0aCBzdHJva2U9IiMwMDAiIHN0cm9rZS13aWR0aD0iMS41IiBkPSJNMjAgMTBjMCA2LjUtOCAxMi04IDEycy04LTUuNS04LTEyYTggOCAwIDEgMSAxNiAwWiIgLz4KCQk8cGF0aCBzdHJva2U9IiMwMDAiIHN0cm9rZS13aWR0aD0iMS41IiBkPSJNMTUgMTBhMyAzIDAgMSAxLTYgMGEzIDMgMCAwIDEgNiAwWiIgLz4KCTwvZz4KPC9zdmc+)
                             label
+                                color: $white
                                 &.none
                                     opacity: 0
                                     visibility: hidden
@@ -261,7 +262,7 @@
                             input
                                 color: $black
                                 &::placeholder
-                                    color: $black
+                                    color: $black 
                                     opacity: 0
                                     transition: .2s ease
                             .dropdownOptions
@@ -381,6 +382,7 @@
                                         fill: none
                                         stroke: var(--primary)
 .home-secA
+    display: none
     .heading
         text-align: center
         margin-bottom: 3rem
@@ -569,14 +571,49 @@
             position: absolute
             cursor: pointer
             transform: translate(-50%, -50%)
-            z-index: 2
-            svg
-                width: 30px
-                height: 30px
-                animation: blink 2s .2s infinite
-                &:hover
-                    ~ span
+            &:hover
+                .point_wrap
+                    span
                         opacity: 1
+            .point_wrap
+                position: relative
+                .icon
+                    width: 30px
+                    height: 30px
+                    animation: blink 2s .2s infinite
+                    svg
+                        width: 100%
+                        height: 100%
+                span
+                    display: block
+                    width: max-content
+                    max-width: 180px
+                    font-size: 14px  
+                    background-color: var(--primary)
+                    padding: 10px 15px
+                    border-radius: 5px
+                    color: $white
+                    position: absolute
+                    bottom: 100%
+                    left: 50%
+                    transform: translate(-50%, -15%)
+                    opacity: 0
+                    transition: .5s ease
+                    --triangle: 10px
+                    @include media(540) 
+                        font-size: 12px
+                        max-width: 150px
+                    &::before
+                        content: ""
+                        display: block
+                        position: absolute
+                        top: calc(100% - var(--triangle) / 2)
+                        left: 50%
+                        translate: -50% 0 
+                        width: var(--triangle)
+                        height: var(--triangle)
+                        background: var(--primary)
+                        transform: rotate(45deg)
             &.point1
                 right: 30%
                 top: 40%
@@ -624,37 +661,6 @@
                 @include media(768) 
                     top: 28%
                     left: 18%
-            span
-                display: block
-                width: max-content
-                max-width: 180px
-                font-size: 14px  
-                background-color: var(--primary)
-                padding: 10px 15px
-                border-radius: 5px
-                color: $white
-                position: absolute
-                bottom: 100%
-                left: 50%
-                transform: translate(-50%, -15%)
-                z-index: 5
-                opacity: 0
-                transition: .5s ease
-                --triangle: 10px
-                @include media(540) 
-                    font-size: 12px
-                    max-width: 150px
-                &::before
-                    content: ""
-                    display: block
-                    position: absolute
-                    top: calc(100% - var(--triangle) / 2)
-                    left: 50%
-                    translate: -50% 0 
-                    width: var(--triangle)
-                    height: var(--triangle)
-                    background: var(--primary)
-                    transform: rotate(45deg)
 
 @keyframes blink
     0% 
