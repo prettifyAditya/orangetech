@@ -28,6 +28,8 @@ header
         gap: 4rem
         @include media(1336)
             gap: 2rem
+        @include media(540)
+            gap: 1rem
         .colA, .colB
             height: 100%
             display: flex
@@ -36,6 +38,10 @@ header
             .logo
                 height: 100%
                 width: 100%
+                @include media(1280)
+                    padding: 7px 0 
+                @include media(540)
+                    padding: 4px 0 
                 img
                     width: 100%
                     height: 100%
@@ -49,15 +55,22 @@ header
                 gap: 40px
                 @include media(1336)
                     gap: 30px
+                @include media(1280)
+                    gap: 20px
                 @include media(991)
                     flex: 0 1 auto
                 @include media(768) 
                     flex: 1
                 @include media(540)
-                    gap: 20px
+                    gap: 15px
                 li
+                    &:first-child
+                        @include media(991)
+                            display: none
                     &.hasDropdown
                         position: relative
+                        @include media(991)
+                            display: none
                     &:hover
                         .trackBtn
                             border-top-left-radius: 5px
@@ -68,6 +81,10 @@ header
                             transform: translateY(0px)
                             opacity: 1
                             pointer-events: all
+                    .signIn
+                        @include media(540)
+                            svg
+                                height: 15px
                     .dropdown-menu
                         position: absolute
                         background: $white
@@ -114,6 +131,9 @@ header
                     padding: 0 18px
                     border: 1px solid $white
                     border-radius: 25px
+                    @include media(1280)
+                        padding: 0 13px
+                        gap: 7px
                     &:hover, &.active
                         background: $white
                         border-color: $white
@@ -124,6 +144,8 @@ header
                 .country-select
                     position: relative
                     --triangle: 10px
+                    @include media(540)
+                        display: none
                     &:hover
                         .country-select-menu
                             transform: scale3d(1, 1, 1)
@@ -207,6 +229,10 @@ header
                         transition: 0.5s ease
                         &:not(:last-child)
                             margin-bottom: 8px
+                            @include media(540)
+                                margin-bottom: 6px
+                        @include media(540)
+                            width: 30px
 
 header
     &.header-fixed
@@ -797,6 +823,8 @@ footer
     background: #183440
     position: relative
     z-index: 0
+    @include media(540)
+        margin-bottom: var(--footerstrip)
     .footer-bg
         position: absolute
         left: 0
@@ -842,7 +870,8 @@ footer
                     gap: 20px
                     @include media(991)
                         flex: 0 1 100%
-                        justify-content: center
+                        justify-content: center  
+                        margin-top: 15px
                     @include media(768)
                         border-top: 1px solid #ffffff47
                         padding-top: 10px
@@ -861,24 +890,35 @@ footer
             display: flex
             flex-wrap: wrap
             gap: 50px 
+            @include media(1280)
+                padding: 40px var(--containerfluid) 80px
             @include media(1100)
                 gap: 15px
             @include media(991)
+                flex-direction: column
+                justify-content: center
                 padding: 40px var(--containerfluid) 60px
-                gap: 20px 10px
+                gap: 30px
             @include media(540)
                 padding: 25px var(--containerfluid) 30px
+                gap: 20px
             .colA
                 flex: 0 1 auto
                 display: block
+                @include media(991)
+                    width: 250px
+                    margin: 0 auto
                 @include media(768) 
                     flex: 0 1 100%
                     text-align: center
+                    width: 220px
+                @include media(540)
+                    width: 180px
                 img
                     object-fit: contain
                     height: unset
-                    @include media(768) 
-                        width: 180px
+                    @include media(991)
+                        height: 100%
             .colB
                 flex: 1
                 max-width: 75%
@@ -886,11 +926,18 @@ footer
                 display: flex
                 gap: 20px
                 padding: 0 0 0 30px
+                @include media(1280)
+                    padding: 0
                 @include media(991)
                     display: grid
                     grid-template-columns: repeat(2, 1fr)
                 @include media(768)
                     padding: 0
+                    margin: 0 auto
+                    max-width: 90%
+                @include media(540)
+                    grid-template-columns: repeat(1, 1fr)
+                    max-width: 100%
                 .list
                     &:last-child
                         flex: 0 1 30%
@@ -933,6 +980,8 @@ footer
                 flex-direction: column
                 align-items: center
                 gap: 20px
+            @include media(540)
+                padding: 20px var(--containerfluid)
             p
                 flex: 1
                 display: flex
@@ -1238,6 +1287,10 @@ footer
         &:not(.btn)
             top: 20px
             right: 20px
+        @include media(540) 
+            svg
+                width: 20px
+                height: 20px
     .form-body
         padding: 0px 50px 30px
         margin-top: 50px
@@ -1246,6 +1299,7 @@ footer
         @include scrollbar(3px,$white,#5e5e5e,8px)
         @include media(768)
             padding: 0px 15px 20px
+            margin-top: 40px
         .title
             text-align: center
             margin-bottom: 1.5rem
@@ -1253,12 +1307,17 @@ footer
                 width: 60px
                 height: 60px
                 margin: 0 auto 10px
+                @include media(540) 
+                    width: 50px
+                    height: 50px
                 img
                     object-fit: contain
             h4
                 font-size: 28px
                 color: $black
                 @include font(600)
+                @include media(540) 
+                    font-size: 24px
             p
                 color: $text
                 font-size: 16px
@@ -1273,6 +1332,10 @@ footer
                 gap: 0 8px
                 color: $primary
                 @include font(500)
+                @include media(768)
+                    position: absolute
+                    left: 20px
+                    top: 20px
                 &:hover
                     color: $primary
                 img
@@ -1397,8 +1460,8 @@ footer
             border: 1px solid #CFCFCF
             background: $white
             border-radius: 50%
-            width: 40px
-            height: 40px
+            width: 50px
+            height: 50px
             display: flex
             align-items: center
             justify-content: center
@@ -1605,7 +1668,7 @@ footer
     right: 0
     z-index: 4
     height: var(--footerstrip)
-    background: $black
+    background: #0a222d
     display: none
     @include media(540)
         display: block

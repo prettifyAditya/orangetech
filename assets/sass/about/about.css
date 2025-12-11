@@ -36,16 +36,38 @@
 .banner.about-banner .bg .banner-wrapper .container-fluid .content h2, .banner.about-banner .bg .banner-wrapper .container .content h2 {
   font-weight: 700;
 }
+@media only screen and (max-width: 768px) {
+  .banner.about-banner .bg .banner-wrapper .container-fluid .content h2, .banner.about-banner .bg .banner-wrapper .container .content h2 {
+    line-height: 1.2;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .banner.about-banner .bg .banner-wrapper .container-fluid .content p, .banner.about-banner .bg .banner-wrapper .container .content p {
+    margin-top: 10px;
+  }
+}
 
 .about-secA .about_wrap {
   --gap: 50px;
   gap: var(--gap);
+}
+@media only screen and (max-width: 1280px) {
+  .about-secA .about_wrap {
+    --gap: 40px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .about-secA .about_wrap {
+    flex-direction: column;
+    --gap: 20px;
+  }
 }
 .about-secA .about_wrap figure {
   flex: 0 1 45%;
   max-width: 45%;
   border-radius: 10px;
   position: relative;
+  line-height: 0;
   position: relative;
 }
 .about-secA .about_wrap figure::before {
@@ -66,6 +88,12 @@
 .about-secA .about_wrap figure::before {
   border-radius: 10px;
 }
+@media only screen and (max-width: 768px) {
+  .about-secA .about_wrap figure {
+    flex: 0 1 100%;
+    max-width: 100%;
+  }
+}
 .about-secA .about_wrap figure video {
   border-radius: 10px;
 }
@@ -76,6 +104,11 @@
   width: 80px;
   pointer-events: none;
 }
+@media only screen and (max-width: 540px) {
+  .about-secA .about_wrap figure .icon {
+    width: 60px;
+  }
+}
 .about-secA .about_wrap figcaption {
   flex: 1;
   padding: 10px 0;
@@ -83,6 +116,27 @@
 .about-secA .about_wrap figcaption h2 {
   font-size: 36px;
   margin-bottom: 20px;
+}
+@media only screen and (max-width: 1280px) {
+  .about-secA .about_wrap figcaption h2 {
+    font-size: 32px;
+  }
+}
+@media only screen and (max-width: 991px) {
+  .about-secA .about_wrap figcaption h2 {
+    font-size: 30px;
+    margin-bottom: 15px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .about-secA .about_wrap figcaption h2 {
+    font-size: 28px;
+  }
+}
+@media only screen and (max-width: 540px) {
+  .about-secA .about_wrap figcaption h2 {
+    font-size: 26px;
+  }
 }
 .about-secA .about_wrap figcaption p {
   color: var(--text);
@@ -101,6 +155,11 @@
   flex-wrap: wrap;
   align-items: center;
 }
+@media only screen and (max-width: 768px) {
+  .about-secB .about_wrap {
+    flex-direction: column;
+  }
+}
 .about-secB .about_wrap .col {
   flex: 1;
   display: flex;
@@ -108,13 +167,64 @@
   gap: 30px;
   padding: 50px 40px;
 }
+@media only screen and (max-width: 1280px) {
+  .about-secB .about_wrap .col {
+    padding: 40px;
+  }
+}
+@media only screen and (max-width: 991px) {
+  .about-secB .about_wrap .col {
+    padding: 20px;
+    gap: 20px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .about-secB .about_wrap .col {
+    padding: 20px 0;
+  }
+}
+@media only screen and (max-width: 540px) {
+  .about-secB .about_wrap .col {
+    padding: 0;
+    gap: 15px;
+  }
+  .about-secB .about_wrap .col:not(:last-child) {
+    padding: 0 0 20px 0;
+  }
+}
 .about-secB .about_wrap .col:not(:last-child) {
   border-right: 1px solid rgba(255, 255, 255, 0.5019607843);
+}
+@media only screen and (max-width: 768px) {
+  .about-secB .about_wrap .col:not(:last-child) {
+    border-right: 0;
+  }
 }
 .about-secB .about_wrap .col .icon {
   flex: 0 1 65px;
   width: 65px;
   height: 65px;
+}
+@media only screen and (max-width: 991px) {
+  .about-secB .about_wrap .col .icon {
+    flex: 0 1 55px;
+    width: 55px;
+    height: 55px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .about-secB .about_wrap .col .icon {
+    flex: 0 1 50px;
+    width: 50px;
+    height: 50px;
+  }
+}
+@media only screen and (max-width: 540px) {
+  .about-secB .about_wrap .col .icon {
+    flex: 0 1 45px;
+    width: 45px;
+    height: 45px;
+  }
 }
 .about-secB .about_wrap .col .icon svg, .about-secB .about_wrap .col .icon img {
   width: 100%;
@@ -129,18 +239,60 @@
   color: var(--white);
   margin-bottom: 5px;
 }
+@media only screen and (max-width: 991px) {
+  .about-secB .about_wrap .col .info h6 {
+    line-height: 1.2;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .about-secB .about_wrap .col .info h6 {
+    font-size: 22px;
+  }
+}
+@media only screen and (max-width: 540px) {
+  .about-secB .about_wrap .col .info h6 {
+    font-size: 20px;
+  }
+}
 
 .about-secC .heading {
   text-align: center;
   max-width: 300px;
   margin: 0 auto 50px;
 }
+@media only screen and (max-width: 1280px) {
+  .about-secC .heading {
+    margin: 0 auto 40px;
+  }
+}
+@media only screen and (max-width: 540px) {
+  .about-secC .heading {
+    margin: 0 auto 30px;
+  }
+}
 .about-secC .main_wrap {
   gap: 50px;
+}
+@media only screen and (max-width: 1280px) {
+  .about-secC .main_wrap {
+    gap: 30px;
+  }
+}
+@media only screen and (max-width: 991px) {
+  .about-secC .main_wrap {
+    flex-direction: column;
+  }
+}
+@media only screen and (max-width: 540px) {
+  .about-secC .main_wrap {
+    gap: 20px;
+  }
 }
 .about-secC .main_wrap figure {
   flex: 1;
   border-radius: 10px;
+  width: 100%;
+  line-height: 0;
 }
 .about-secC .main_wrap figure img {
   border-radius: 10px;
@@ -151,6 +303,11 @@
   grid-template-columns: repeat(2, 1fr);
   grid-gap: 15px;
 }
+@media only screen and (max-width: 540px) {
+  .about-secC .main_wrap figcaption {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
 .about-secC .main_wrap figcaption .tech_col {
   padding: 20px 15px;
   border: 1px solid #BABABA;
@@ -158,6 +315,11 @@
   display: flex;
   flex-wrap: wrap;
   gap: 15px;
+}
+@media only screen and (max-width: 768px) {
+  .about-secC .main_wrap figcaption .tech_col {
+    padding: 15px;
+  }
 }
 .about-secC .main_wrap figcaption .tech_col .icon {
   flex: 0 1 28px;
@@ -175,6 +337,12 @@
   font-size: 18px;
   margin-bottom: 5px;
   font-weight: 700;
+  line-height: 1.2;
+}
+@media only screen and (max-width: 540px) {
+  .about-secC .main_wrap figcaption .tech_col .info h6 {
+    font-size: 16px;
+  }
 }
 .about-secC .main_wrap figcaption .tech_col .info p {
   color: var(--text);
@@ -190,6 +358,16 @@
   height: 100vh;
   line-height: 0;
 }
+@media only screen and (max-width: 768px) {
+  .about-secD figure {
+    height: 70vh;
+  }
+}
+@media only screen and (max-width: 540px) {
+  .about-secD figure {
+    height: 60vh;
+  }
+}
 
 .about-secE {
   position: relative;
@@ -199,10 +377,35 @@
   text-align: center;
   margin-bottom: 50px;
 }
+@media only screen and (max-width: 1280px) {
+  .about-secE .heading {
+    margin-bottom: 40px;
+  }
+}
+@media only screen and (max-width: 540px) {
+  .about-secE .heading {
+    margin-bottom: 30px;
+  }
+}
 .about-secE .core_wrapper {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-gap: 20px;
+}
+@media only screen and (max-width: 991px) {
+  .about-secE .core_wrapper {
+    grid-gap: 15px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .about-secE .core_wrapper {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media only screen and (max-width: 540px) {
+  .about-secE .core_wrapper {
+    grid-template-columns: repeat(1, 1fr);
+  }
 }
 .about-secE .core_wrapper .core_col {
   padding: 20px 18px;
@@ -212,10 +415,29 @@
   flex-wrap: wrap;
   gap: 15px;
 }
+@media only screen and (max-width: 991px) {
+  .about-secE .core_wrapper .core_col {
+    padding: 15px;
+  }
+}
 .about-secE .core_wrapper .core_col .icon {
   flex: 0 1 45px;
   width: 45px;
   height: 45px;
+}
+@media only screen and (max-width: 991px) {
+  .about-secE .core_wrapper .core_col .icon {
+    flex: 0 1 40px;
+    width: 40px;
+    height: 40px;
+  }
+}
+@media only screen and (max-width: 540px) {
+  .about-secE .core_wrapper .core_col .icon {
+    flex: 0 1 35px;
+    width: 35px;
+    height: 35px;
+  }
 }
 .about-secE .core_wrapper .core_col .icon svg, .about-secE .core_wrapper .core_col .icon img {
   width: 100%;
@@ -228,6 +450,12 @@
   font-size: 20px;
   margin-bottom: 5px;
   font-weight: 700;
+  line-height: 1.2;
+}
+@media only screen and (max-width: 540px) {
+  .about-secE .core_wrapper .core_col .info h6 {
+    font-size: 16px;
+  }
 }
 .about-secE .core_wrapper .core_col .info p {
   color: var(--text);

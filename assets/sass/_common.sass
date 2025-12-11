@@ -38,10 +38,10 @@ $scrollwidth: 8px
         --containerfluid: 15px
     @include media(540)
         --headerheight: 80px
-        --headerfixed: 60px
+        --headerfixed: 70px
     @include media(320)
-        --containerfluid: 10px
-
+        --containerfluid: 10px  
+  
 .sec-pad
     padding: 60px 0 0
     @include media(991)
@@ -71,6 +71,8 @@ body
             margin-right: 0
         header
             width: calc(100% - $scrollwidth)
+            @include media(768) 
+                width: 100%
 body,html
     font-size: 16px
     line-height: 1.5
@@ -84,11 +86,15 @@ select
 
 p
     color: var(--white)
+    line-height: 1.2
+    @include media(540)
+        font-size: 14px
     
 a[href]
     text-decoration: none
     cursor: pointer
     transition: .5s ease
+    line-height: 1.2
     &.logo
         display: block
         line-height: 0
@@ -149,7 +155,7 @@ h4, h5
         @include media(768)
             font-size: 32px
         @include media(540)
-            font-size: 30px
+            font-size: 28px
 
     >p
         margin-top: 10px
@@ -305,9 +311,17 @@ button
             color: $white
             line-height: 1.2
             margin-bottom: 5px
+            @include media(991)
+                font-size: 22px
+            @include media(768)
+                font-size: 20px
+            @include media(540)
+                font-size: 18px
         p
             font-size: 16px
             line-height: 1.2
+            @include media(540)
+                font-size: 14px
 
 .category-col
     @include after(linear-gradient(0deg, rgba(0, 0, 0, 0.7) 30%, rgba(0, 0, 0, 0) 100%))
@@ -431,6 +445,7 @@ button
     width: 100%
     height: 100%
     border-radius: 5px
+    background: $white
     &:hover
         figure
             img
@@ -454,6 +469,8 @@ button
             font-weight: 600
             @include media(768)
                 font-size: 18px
+            @include media(540)
+                font-size: 16px
         p
             color: $text
             line-height: 1.3
@@ -517,8 +534,6 @@ button
     transform: translateY(100%)
     transition: 0s ease .5s,opacity .5s ease
     cursor: pointer
-    @include media(540)
-        display: none
     &.is-open
         transition: opacity 1s ease
         opacity: 1
@@ -574,8 +589,7 @@ button
     @include media(768)
         height: 30px
     @include media(540)
-        font-size: 12px
-        --padding: 14px
+        font-size: 14px
     &::before
         content: ""
         position: absolute
@@ -741,11 +755,11 @@ button
             line-height: 1.2
             color: $white
             @include media(1280)
-                font-size: 44px
-            @include media(991)
-                font-size: 38px
-            @include media(768)
                 font-size: 34px
+            @include media(991)
+                font-size: 32px
+            @include media(768)
+                font-size: 30px
             @include media(540)
                 font-size: 28px
                 line-height: 1.3
@@ -757,6 +771,8 @@ button
                 margin-top: 4px
                 @include media(768)
                     line-height: 1.2
+                @include media(540)
+                    font-size: 14px
 
 // swiper
 
@@ -965,9 +981,16 @@ button
                 background: $primary
 
 .more-sec
+    .container
+        @include media(768)
+            padding-right: 0
     .heading
         text-align: center
         margin-bottom: 50px
+        @include media(768)
+            margin-bottom: 40px
+        @include media(540)
+            margin-bottom: 30px
     .more_wrapper
         position: relative
         .more_slider

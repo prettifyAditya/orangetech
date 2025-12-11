@@ -41,6 +41,11 @@
   --textareaheight: 86px;
   --paddingleftright: 0px;
 }
+@media only screen and (max-width: 540px) {
+  .form {
+    --labelfontbefore: 14px;
+  }
+}
 .form .form-group {
   position: relative;
   flex: 0 1 100%;
@@ -679,7 +684,7 @@
 @media only screen and (max-width: 540px) {
   :root {
     --headerheight: 80px;
-    --headerfixed: 60px;
+    --headerfixed: 70px;
   }
 }
 @media only screen and (max-width: 320px) {
@@ -738,6 +743,11 @@ body.overflow-hidden {
 body.overflow-hidden header {
   width: calc(100% - 8px);
 }
+@media only screen and (max-width: 768px) {
+  body.overflow-hidden header {
+    width: 100%;
+  }
+}
 
 body, html {
   font-size: 16px;
@@ -754,12 +764,19 @@ select {
 
 p {
   color: var(--white);
+  line-height: 1.2;
+}
+@media only screen and (max-width: 540px) {
+  p {
+    font-size: 14px;
+  }
 }
 
 a[href] {
   text-decoration: none;
   cursor: pointer;
   transition: 0.5s ease;
+  line-height: 1.2;
 }
 a[href].logo {
   display: block;
@@ -915,7 +932,7 @@ h4, h5 {
 }
 @media only screen and (max-width: 540px) {
   .heading h3, .heading h2 {
-    font-size: 30px;
+    font-size: 28px;
   }
 }
 .heading > p {
@@ -1195,9 +1212,29 @@ button {
   line-height: 1.2;
   margin-bottom: 5px;
 }
+@media only screen and (max-width: 991px) {
+  .service_col .figcaption h6, .service_col figcaption h6 {
+    font-size: 22px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .service_col .figcaption h6, .service_col figcaption h6 {
+    font-size: 20px;
+  }
+}
+@media only screen and (max-width: 540px) {
+  .service_col .figcaption h6, .service_col figcaption h6 {
+    font-size: 18px;
+  }
+}
 .service_col .figcaption p, .service_col figcaption p {
   font-size: 16px;
   line-height: 1.2;
+}
+@media only screen and (max-width: 540px) {
+  .service_col .figcaption p, .service_col figcaption p {
+    font-size: 14px;
+  }
 }
 
 .category-col::after {
@@ -1442,6 +1479,7 @@ button {
   width: 100%;
   height: 100%;
   border-radius: 5px;
+  background: var(--white);
 }
 .blogs_col:hover figure img {
   transform: scale(1.1);
@@ -1487,6 +1525,11 @@ button {
 @media only screen and (max-width: 768px) {
   .blogs_col figcaption h6, .blogs_col .figcaption h6 {
     font-size: 18px;
+  }
+}
+@media only screen and (max-width: 540px) {
+  .blogs_col figcaption h6, .blogs_col .figcaption h6 {
+    font-size: 16px;
   }
 }
 .blogs_col figcaption p, .blogs_col .figcaption p {
@@ -1576,11 +1619,6 @@ button {
   transition: 0s ease 0.5s, opacity 0.5s ease;
   cursor: pointer;
 }
-@media only screen and (max-width: 540px) {
-  .overlay {
-    display: none;
-  }
-}
 .overlay.is-open {
   transition: opacity 1s ease;
   opacity: 1;
@@ -1647,8 +1685,7 @@ button {
 }
 @media only screen and (max-width: 540px) {
   .btn {
-    font-size: 12px;
-    --padding: 14px;
+    font-size: 14px;
   }
 }
 .btn::before {
@@ -1883,17 +1920,17 @@ button {
 }
 @media only screen and (max-width: 1280px) {
   .banner .banner-wrapper h1, .banner .banner-wrapper h2 {
-    font-size: 44px;
+    font-size: 34px;
   }
 }
 @media only screen and (max-width: 991px) {
   .banner .banner-wrapper h1, .banner .banner-wrapper h2 {
-    font-size: 38px;
+    font-size: 32px;
   }
 }
 @media only screen and (max-width: 768px) {
   .banner .banner-wrapper h1, .banner .banner-wrapper h2 {
-    font-size: 34px;
+    font-size: 30px;
   }
 }
 @media only screen and (max-width: 540px) {
@@ -1911,6 +1948,11 @@ button {
 @media only screen and (max-width: 768px) {
   .banner .banner-wrapper .content p {
     line-height: 1.2;
+  }
+}
+@media only screen and (max-width: 540px) {
+  .banner .banner-wrapper .content p {
+    font-size: 14px;
   }
 }
 
@@ -2193,9 +2235,24 @@ button {
   background: var(--primary);
 }
 
+@media only screen and (max-width: 768px) {
+  .more-sec .container {
+    padding-right: 0;
+  }
+}
 .more-sec .heading {
   text-align: center;
   margin-bottom: 50px;
+}
+@media only screen and (max-width: 768px) {
+  .more-sec .heading {
+    margin-bottom: 40px;
+  }
+}
+@media only screen and (max-width: 540px) {
+  .more-sec .heading {
+    margin-bottom: 30px;
+  }
 }
 .more-sec .more_wrapper {
   position: relative;
@@ -3081,9 +3138,44 @@ em {
   padding: 100px 0;
   border-left: 2px solid var(--primary);
 }
+@media only screen and (max-width: 1336px) {
+  .faqs-secA .faqs_wrapper {
+    padding: 70px 0;
+    --gap: 40px;
+    margin-left: 20px;
+  }
+}
+@media only screen and (max-width: 991px) {
+  .faqs-secA .faqs_wrapper {
+    padding: 60px 0;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .faqs-secA .faqs_wrapper {
+    padding: 50px 0;
+    --gap: 30px;
+  }
+}
+@media only screen and (max-width: 540px) {
+  .faqs-secA .faqs_wrapper {
+    padding: 40px 0;
+    --gap: 20px;
+    flex-direction: column-reverse;
+  }
+}
 .faqs-secA .faqs_wrapper .colA {
   flex: 1;
   max-width: calc(70% - var(--gap));
+}
+@media only screen and (max-width: 991px) {
+  .faqs-secA .faqs_wrapper .colA {
+    max-width: calc(80% - var(--gap));
+  }
+}
+@media only screen and (max-width: 540px) {
+  .faqs-secA .faqs_wrapper .colA {
+    max-width: 100%;
+  }
 }
 .faqs-secA .faqs_wrapper .colA .summery-detail-content .col {
   --padlr: 0;
@@ -3112,6 +3204,17 @@ em {
   cursor: pointer;
   transition: 0.5s ease;
 }
+@media only screen and (max-width: 991px) {
+  .faqs-secA .faqs_wrapper .colA .summery-detail-content .col .title {
+    margin-left: -18px;
+  }
+}
+@media only screen and (max-width: 540px) {
+  .faqs-secA .faqs_wrapper .colA .summery-detail-content .col .title {
+    gap: 15px;
+    margin-left: -16px;
+  }
+}
 .faqs-secA .faqs_wrapper .colA .summery-detail-content .col .title h6 {
   font-size: 18px;
   line-height: 1.2;
@@ -3137,7 +3240,7 @@ em {
   padding: 10px;
   transition: 0.5s ease;
 }
-@media only screen and (max-width: 540px) {
+@media only screen and (max-width: 991px) {
   .faqs-secA .faqs_wrapper .colA .summery-detail-content .col .title .outer-circle {
     padding: 7px;
   }
@@ -3206,6 +3309,11 @@ em {
   position: relative;
   padding: 0px 10px 0px 40px;
 }
+@media only screen and (max-width: 540px) {
+  .faqs-secA .faqs_wrapper .colA .summery-detail-content .col article {
+    padding: 0px 10px 0 30px;
+  }
+}
 .faqs-secA .faqs_wrapper .colA .summery-detail-content .col article p, .faqs-secA .faqs_wrapper .colA .summery-detail-content .col article ul, .faqs-secA .faqs_wrapper .colA .summery-detail-content .col article h2, .faqs-secA .faqs_wrapper .colA .summery-detail-content .col article h3, .faqs-secA .faqs_wrapper .colA .summery-detail-content .col article h4, .faqs-secA .faqs_wrapper .colA .summery-detail-content .col article h5, .faqs-secA .faqs_wrapper .colA .summery-detail-content .col article h6 {
   margin-bottom: 10px;
   color: var(--black);
@@ -3214,6 +3322,11 @@ em {
   color: var(--text);
   font-size: 16px;
   line-height: 1.5;
+}
+@media only screen and (max-width: 540px) {
+  .faqs-secA .faqs_wrapper .colA .summery-detail-content .col article *:not(button) {
+    line-height: 1.2;
+  }
 }
 .faqs-secA .faqs_wrapper .colA .summery-detail-content .col article h1, .faqs-secA .faqs_wrapper .colA .summery-detail-content .col article h2, .faqs-secA .faqs_wrapper .colA .summery-detail-content .col article h3, .faqs-secA .faqs_wrapper .colA .summery-detail-content .col article h4, .faqs-secA .faqs_wrapper .colA .summery-detail-content .col article h5, .faqs-secA .faqs_wrapper .colA .summery-detail-content .col article h6, .faqs-secA .faqs_wrapper .colA .summery-detail-content .col article b {
   color: var(--black);
@@ -3245,7 +3358,26 @@ em {
   flex: 0 1 30%;
   max-width: 30%;
 }
+@media only screen and (max-width: 991px) {
+  .faqs-secA .faqs_wrapper .colB {
+    flex: 0 1 20%;
+    max-width: 20%;
+  }
+}
 .faqs-secA .faqs_wrapper .colB figure {
   width: 280px;
   margin: 0 auto;
+}
+@media only screen and (max-width: 991px) {
+  .faqs-secA .faqs_wrapper .colB figure {
+    width: 100%;
+    position: sticky;
+    top: var(--headerheight);
+  }
+}
+@media only screen and (max-width: 540px) {
+  .faqs-secA .faqs_wrapper .colB figure {
+    position: static;
+    margin-left: 20px;
+  }
 }/*# sourceMappingURL=faqs.css.map */

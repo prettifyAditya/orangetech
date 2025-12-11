@@ -26,7 +26,18 @@
         display: grid
         grid-template-columns: repeat(3, 1fr)
         grid-gap: 15px
-
+        @include media(768)
+            grid-template-columns: repeat(2, 1fr)
+        @include media(540)
+            grid-template-columns: repeat(1, 1fr)
+        .service_col
+            @include media(991)
+                figcaption
+                    padding: 0 10px 20px
+                    h6
+                        font-size: 18px
+                    p
+                        font-size: 14px 
 // Service Details
 
 .banner
@@ -46,37 +57,69 @@
                     .content
                         h2
                             font-weight: 700
+                            @include media(768)
+                                font-size: 24px
+                            @include media(540)
+                                font-size: 20px
 
 .service-detailA
+    @include media(991)
+        padding-bottom: 0
     .service_wrapper
         --gap: 50px
         gap: var(--gap)
+        @include media(1280)
+            --gap: 40px
         .colA
             flex: 1
             max-width: calc(70% - var(--gap))
+            @include media(991)
+                max-width: 100%
         .colB
             flex: 0 1 30%
             max-width: 30%
+            @include media(991)
+                flex: 0 1 100%
+                max-width: 100%
             .form_wrapper
                 width: 100%
                 background: var(--gradient-b)
                 padding: 30px 40px
                 position: sticky
                 top: calc( var(--headerheight) + 20px )
+                @include media(1280)
+                    padding: 25px
+                @include media(991)
+                    position: relative
+                    top: unset
                 .title
                     text-align: center
                     .icon
                         max-width: 60px
                         margin: 0 auto
+                        @include media(1280)
+                            max-width: 50px
+                        @include media(540)
+                            max-width: 40px
                     h4
                         font-size: 28px
                         font-weight: 600
+                        @include media(1280)
+                            font-size: 24px
+                        @include media(768)
+                            font-size: 22px
+                        @include media(540)
+                            font-size: 20px
                     p
                         color: $text
                         font-weight: 500
+                        @include media(1280)
+                            font-size: 14px
                 .form
                     margin-top: 30px
                     --gaptb: 25px
+                    @include media(1280)
+                        margin-top: 20px
                 .btn_wrap
                     width: 100%
                     margin-top: 10px

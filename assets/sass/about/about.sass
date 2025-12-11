@@ -20,19 +20,33 @@
                         text-align: center
                         h2
                             font-weight: 700
+                            @include media(768)
+                                line-height: 1.2
+                        p
+                            @include media(768)
+                                margin-top: 10px
                         
 .about-secA
     .about_wrap
         --gap: 50px
         gap: var(--gap)
+        @include media(1280)
+            --gap: 40px
+        @include media(768)
+            flex-direction: column
+            --gap: 20px
         figure
-            flex: 0 1 45%
+            flex: 0 1 45%  
             max-width: 45%
             border-radius: 10px
             position: relative
+            line-height: 0
             @include before(linear-gradient(180deg, rgba(0, 0, 0, 0) 14%, rgba(0, 0, 0, 0.5) 100%))
             &::before
                 border-radius: 10px
+            @include media(768)
+                flex: 0 1 100%
+                max-width: 100%
             video
                 border-radius: 10px
             .icon
@@ -41,12 +55,23 @@
                 bottom: 10%
                 width: 80px
                 pointer-events: none
+                @include media(540)
+                    width: 60px
         figcaption
             flex: 1
             padding: 10px 0 
             h2
                 font-size: 36px
                 margin-bottom: 20px  
+                @include media(1280)
+                    font-size: 32px
+                @include media(991)
+                    font-size: 30px
+                    margin-bottom: 15px
+                @include media(768)
+                    font-size: 28px
+                @include media(540)
+                    font-size: 26px
             p
                 color: $text
                 font-weight: 500
@@ -60,18 +85,46 @@
         display: flex
         flex-wrap: wrap
         align-items: center
+        @include media(768)
+            flex-direction: column
         .col
             flex: 1
             display: flex
             flex-wrap: wrap
             gap: 30px
             padding: 50px 40px
+            @include media(1280)
+                padding: 40px 
+            @include media(991)
+                padding: 20px
+                gap: 20px
+            @include media(768)
+                padding: 20px 0 
+            @include media(540)
+                padding: 0
+                gap: 15px
+                &:not(:last-child)
+                    padding: 0 0 20px 0
             &:not(:last-child)
                 border-right: 1px solid #FFFFFF80
+                @include media(768)
+                    border-right: 0
             .icon
                 flex: 0 1 65px
                 width: 65px
                 height: 65px
+                @include media(991)
+                    flex: 0 1 55px
+                    width: 55px
+                    height: 55px
+                @include media(768)
+                    flex: 0 1 50px
+                    width: 50px
+                    height: 50px
+                @include media(540)
+                    flex: 0 1 45px
+                    width: 45px
+                    height: 45px
                 svg, img
                     width: 100%
                     height: 100%
@@ -82,17 +135,35 @@
                     font-size: 24px
                     color: $white
                     margin-bottom: 5px
+                    @include media(991)
+                        line-height: 1.2
+                    @include media(768)
+                        font-size: 22px
+                    @include media(540)
+                        font-size: 20px
 
 .about-secC
     .heading
         text-align: center
         max-width: 300px
         margin: 0 auto 50px
+        @include media(1280)
+            margin: 0 auto 40px
+        @include media(540)
+            margin: 0 auto 30px
     .main_wrap
         gap: 50px
+        @include media(1280)
+            gap: 30px
+        @include media(991)
+            flex-direction: column
+        @include media(540)
+            gap: 20px
         figure
             flex: 1
             border-radius: 10px
+            width: 100%
+            line-height: 0
             img
                 border-radius: 10px
         figcaption
@@ -100,6 +171,8 @@
             display: grid
             grid-template-columns: repeat(2, 1fr)
             grid-gap: 15px
+            @include media(540)
+                grid-template-columns: repeat(1, 1fr)
             .tech_col
                 padding: 20px 15px
                 border: 1px solid #BABABA
@@ -107,6 +180,8 @@
                 display: flex
                 flex-wrap: wrap
                 gap: 15px
+                @include media(768)
+                    padding: 15px
                 .icon
                     flex: 0 1 28px
                     width: 28px
@@ -120,6 +195,9 @@
                         font-size: 18px
                         margin-bottom: 5px
                         font-weight: 700
+                        line-height: 1.2
+                        @include media(540)
+                            font-size: 16px
                     p
                         color: $text
                         line-height: 1.2
@@ -130,6 +208,10 @@
         width: 100%
         height: 100vh
         line-height: 0
+        @include media(768)
+            height: 70vh
+        @include media(540)
+            height: 60vh
 
 .about-secE
     position: relative
@@ -137,10 +219,20 @@
     .heading
         text-align: center
         margin-bottom: 50px
+        @include media(1280)
+            margin-bottom: 40px
+        @include media(540)
+            margin-bottom: 30px
     .core_wrapper
         display: grid
         grid-template-columns: repeat(3, 1fr)
         grid-gap: 20px
+        @include media(991)
+            grid-gap: 15px
+        @include media(768)
+            grid-template-columns: repeat(2, 1fr)
+        @include media(540)
+            grid-template-columns: repeat(1, 1fr)
         .core_col
             padding: 20px 18px
             border: 1px solid #6666666B
@@ -148,10 +240,20 @@
             display: flex
             flex-wrap: wrap
             gap: 15px
+            @include media(991)
+                padding: 15px
             .icon
                 flex: 0 1 45px
                 width: 45px
                 height: 45px
+                @include media(991)
+                    flex: 0 1 40px
+                    width: 40px
+                    height: 40px
+                @include media(540)
+                    flex: 0 1 35px
+                    width: 35px
+                    height: 35px
                 svg, img
                     width: 100%
                     height: 100%
@@ -161,6 +263,9 @@
                     font-size: 20px
                     margin-bottom: 5px
                     font-weight: 700
+                    line-height: 1.2
+                    @include media(540)
+                        font-size: 16px
                 p
                     color: $text
                     line-height: 1.2

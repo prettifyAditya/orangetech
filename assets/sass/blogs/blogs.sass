@@ -49,7 +49,7 @@
         margin: 0 auto 10px
         transition: 1s ease
         @include media(768)
-            width: 70px
+            width: 35px
     button
         font-size: 16px
         color: $text
@@ -87,6 +87,8 @@
                         text-transform: capitalize
                         line-height: 1.2
                         margin-bottom: 10px
+                        @include media(991)
+                            font-size: 34px
                         @include media(768)
                             font-size: 32px
                         @include media(540)

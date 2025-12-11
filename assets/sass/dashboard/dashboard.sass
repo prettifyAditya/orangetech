@@ -4,10 +4,10 @@
     margin-top: var(--headerheight)
     background: #F4F4F4
     padding: 45px 0 55px
-    @include media(768)
-        margin-top: calc(var(--headerheight) + 30px)
+    @include media(540)
+        padding: 35px 0 45px
     .flex 
-        @include media(540)
+        @include media(991)
             flex-direction: column
         &.order-flex
             @include media(768)
@@ -33,14 +33,18 @@
             position: sticky
             top: calc(var(--headerfixed) + 10px)
             height: 100%
-            @include media(540)
-                position: static
+            @include media(991)
+                position: relative
+                top: unset
         .aside-left
             flex: 0 1 27%
             max-width: 300px
             width: 100% 
             background: $white
             border-radius: 5px
+            @include media(991)
+                flex: 0 1 100%
+                max-width: 100%
             @include after
             &::after
                 background: url(../../images/ham-ship.svg) no-repeat
@@ -98,9 +102,7 @@
                 background-position: 0 100%
                 background-size: 100% auto
                 @include media(768)
-                    padding: 20px 15px 2rem
-                @include media(540) 
-                    padding: 15px 10px 1.5rem
+                    padding: 40px 30px 6rem 0
                 ul
                     li
                         display: flex
@@ -147,14 +149,14 @@
             flex: 1
             margin-left: 15px
             @include media(991)
-                margin-left: 40px
-            @include media(768)
-                margin-left: 30px
-            @include media(540)
                 margin-left: 0
-                margin-top: 40px
+                margin-top: 30px
             &.forget_main
                 height: auto
+            &.user-dashboard
+                max-width: calc( 100% - 300px )
+                @include media(991)
+                    max-width: 100%
             .wallet_wrapper
                 padding: 20px
                 border: 1px solid #CDCBCB
@@ -216,9 +218,12 @@
             .aside-right-wrap
                 .top_grid
                     display: flex
+                    flex-wrap: wrap
                     align-items: center
                     gap: 10px
                     margin-bottom: 20px
+                    @include media(1280)
+                        margin-bottom: 15px
                     .tol_col
                         flex: 1
                         height: 110px
@@ -230,6 +235,8 @@
                         border: 1px solid #6666663D
                         border-radius: 5px
                         transition: .5s ease
+                        @include media(1280)
+                            padding: 10px
                         &:hover
                             background: $primary
                             box-shadow: 0 5px 15px 0 #00000059
@@ -250,6 +257,8 @@
                             h6
                                 font-weight: 600
                                 font-size: 20px
+                                @include media(768)
+                                    line-height: 1.2
                         .icon
                             flex: 0 1 auto
                             width: 35px
@@ -263,10 +272,18 @@
                     margin-bottom: 20px
                     background: $white
                     border-radius: 5px
+                    @include media(1280)
+                        padding: 15px 15px 30px 15px
                     .top-nav
                         display: flex
                         align-items: center
                         justify-content: space-between
+                        @include media(1280)
+                            margin-bottom: 0
+                        @include media(768)
+                            flex-direction: column
+                            align-items: start
+                            gap: 10px
                         .title
                             font-size: 18px
                             font-weight: 600
@@ -275,6 +292,11 @@
                             display: flex
                             align-items: center
                             gap: 15px
+                            @include media(768)
+                                width: 100%
+                            @include media(540)
+                                flex-wrap: wrap
+                                justify-content: end
                             .date-range
                                 border: none
                                 outline: none
@@ -294,14 +316,28 @@
                                 -webkit-user-select: none
                                 -moz-user-select: none
                                 user-select: none
+                                @include media(540)
+                                    width: 100%
+                                    padding-right: 0
+                                    background-position: 95% 50%
                             .search
                                 max-width: 170px
                                 background-position: calc(100% - var(--padding)) 50%
                                 padding-right: calc(var(--iconsize) + var(--padding) + 4px)
                                 padding-left: var(--padding)
+                                @include media(768)
+                                    max-width: 100%
+                                    flex: 1
                     .table_wrapper
                         width: 100%
                         margin-top: 25px
+                        overflow-x: auto
+                        &::-webkit-scrollbar
+                            width: 2px
+                            height: 2px
+                            background: $white
+                        &::-webkit-scrollbar-thumb
+                            background: $primary
                         table
                             border-collapse: collapse
                             width: 100%
@@ -316,6 +352,7 @@
                             tr
                                 th, td
                                     padding: 5px
+                                    white-space: nowrap
                                 th
                                     color: #5A607F
                                     font-size: 14px
@@ -329,6 +366,8 @@
                                         color: $text
                                         text-align: center
                                         font-weight: 500
+                                        @include media(540)
+                                            font-size: 12px
                                         &:first-child
                                             text-align: left
                                             color: $black
@@ -336,6 +375,8 @@
                                             .state
                                                 font-size: 14px
                                                 font-weight: 500
+                                                @include media(540)
+                                                    font-size: 12px 
                                                 &.red
                                                     color: #FF4E4E
                                                 &.green
@@ -350,9 +391,11 @@
                                             color: #16ABEC
                                             font-size: 12px
                 .bottom_grid 
-                    display: flex
                     --gap: 20px
                     gap: var(--gap)
+                    align-items: start
+                    @include media(991)
+                        flex-direction: column
                     .total_ship_wrap
                         flex: 1
                         max-width: calc( 65% - var(--gap) )
@@ -360,6 +403,8 @@
                         padding: 15px
                         background: $white
                         border-radius: 5px
+                        @include media(991)
+                            max-width: 100%
                         .top-nav
                             display: flex
                             align-items: center
@@ -394,6 +439,8 @@
                         width: 100%
                         background: $white
                         border-radius: 5px
+                        @include media(991)
+                            max-width: 100%
                         .top-nav
                             padding: 15px
                             border-bottom: 1px solid #0000001F
@@ -412,6 +459,12 @@
                                     margin-left: -10px
                                     position: relative
                                     z-index: 0
+                                    @include media(1280)
+                                        padding-top: 15px
+                                        gap: 10px
+                                    @include media(991)
+                                        padding-top: 40px
+                                        gap: 20px
                                     &.active
                                         &::before
                                             height: 100%
@@ -452,6 +505,7 @@
                                             opacity: 0
                                     .info
                                         flex: 1
+                                        padding-right: 10px
                                         h6
                                             font-size: 16px
                                             font-weight: 600
@@ -461,28 +515,41 @@
                                             font-weight: 400
                                             font-size: 14px
                                             color: $text
+                                            margin-top: 5px
                                     .details
                                         display: flex
                                         flex-wrap: wrap
                                         margin-top: 10px
                                         .detinfo
                                             padding: 0 20px
+                                            @include media(1280)
+                                                padding: 0 8px
                                             &:not(:last-child)
                                                 border-right: 1px solid #0000002E
                                             &:first-child
                                                 padding: 0 20px 0 0 
+                                                @include media(1280)
+                                                    padding: 0 8px 0 0
                                             em, p
                                                 font-size: 14px
                                                 color: $text
                                                 line-height: 1.2
+                                                @include media(1170)
+                                                    font-size: 12px
+                                                @include media(991)
+                                                    font-size: 14px
                                 .btn_wrap
                                     margin: 30px 20px 0 20px
                                     padding-bottom: 30px
+                                    @include media(1280)    
+                                        margin: 20px 20px 0 20px
                 // user profile
                 .profile
                     padding: 15px 20px 30px
                     background: $white
                     border-radius: 5px
+                    @include media(540)
+                        padding: 15px 15px 25px
                     .tab-nav
                         display: flex
                         align-items: center
@@ -492,12 +559,20 @@
                         border-radius: 5px
                         width: fit-content
                         margin-bottom: 40px
+                        @include media(540)
+                            width: 100%
+                            gap: 15px
+                            padding: 10px 15px 0 15px
+                            margin-bottom: 30px
+                            justify-content: center
                         li  
                             position: relative
                             padding: 0 5px 5px
                             transition: .5s ease
                             font-weight: 600
                             color: $text
+                            @include media(540)
+                                font-size: 14px
                             &.active
                                 color: $primary
                                 &::before
@@ -518,14 +593,22 @@
                                     font-size: 20px
                                     font-weight: 600
                                     margin-bottom: 20px
+                                    @include media(540)
+                                        font-size: 18px
                                 .form
                                     --labelbefore: var(--text)
                                     --labelafter: var(--black)
                                     --borderbefore: var(--text)
+                                    @include media(540)
+                                        --item: 1
+                                        --gaptb: 25px
                                 .full
                                     display: flex
                                     align-items: center
                                     gap: var(--gaplr)
+                                    @include media(540)
+                                        flex-wrap: wrap
+                                        gap: var(--gaptb)
                                 .form-group.file-input
                                     .aadhar
                                         --filenameinitial: "Aadhar Card"
@@ -589,6 +672,9 @@
                     align-items: center
                     justify-content: space-between
                     margin-bottom: 20px
+                    @include media(540)
+                        flex-direction: column
+                        gap: 15px
                     .title
                         font-size: 18px
                         font-weight: 600
@@ -597,6 +683,9 @@
                         display: flex
                         align-items: center
                         gap: 15px
+                        @include media(540)
+                            flex-direction: column
+                            width: 100%
                         .date-range
                             border: none
                             outline: none
@@ -615,11 +704,16 @@
                             -webkit-user-select: none
                             -moz-user-select: none
                             user-select: none
+                            @include media(540)
+                                width: 100%
+                                background-position: 93% 65%
                         .search
-                            max-width: 170px
+                            max-width: 100%
                             background-position: calc(100% - var(--padding)) 50%
                             padding-right: calc(var(--iconsize) + var(--padding) + 4px)
                             padding-left: var(--padding)
+                            @include media(540)
+                                width: 100%
                 .shipment_wrapper
                     .shipment_col
                         border-radius: 10px
@@ -632,6 +726,8 @@
                             align-items: center
                             justify-content: space-between
                             border-bottom: 1px solid #F1F1F1
+                            @include media(1280)
+                                padding: 15px
                             .orderno
                                 h6
                                     font-size: 16px
@@ -655,6 +751,11 @@
                                 padding: 20px
                                 --pointer: 14px
                                 transition: 0.5s ease
+                                @include media(1280)
+                                    --gap: 10px
+                                    justify-content: space-between
+                                @include media(768)
+                                    padding: 15px
                                 &:not(:last-child)
                                     border-bottom: 1px solid #E4E4E4
                                 .icon
@@ -666,6 +767,9 @@
                                     display: flex
                                     align-items: center
                                     justify-content: center
+                                    @include media(1280)
+                                        width: 50px
+                                        height: 50px
                                     svg, img
                                         width: 60%
                                         height: 60%
@@ -676,17 +780,47 @@
                                     justify-content: space-between
                                     gap: 15px
                                     padding: 0 15px
+                                    @include media(1280)
+                                        padding: 0
+                                        order: 2
+                                        flex: 0 1 100%
+                                    @include media(540)
+                                        flex-direction: column
+                                    &:has(.more_routes)
+                                        .line
+                                            @include media(540)
+                                                display: none
+                                            &:nth-last-child(2)
+                                                @include media(540)
+                                                    display: block
                                     .route_info
                                         flex: 0 1 auto
                                         min-width: max-content
+                                        @include media(1024)
+                                            min-width: unset
+                                        @include media(768)
+                                            flex: 0 1 40%
+                                            max-width: 40%
+                                            word-wrap: break-word
+                                        @include media(540)
+                                            flex: 1
+                                            max-width: 100%
+                                            word-wrap: normal
+                                            min-width: 100%
                                         h6
                                             font-size: 16px 
                                             font-weight: 600
                                             margin-bottom: 0
+                                            line-height: 1.2
                                         p
                                             font-size: 14px
                                             font-weight: 500
                                             color: $text
+                                            span
+                                                @include media(1024)
+                                                    display: block
+                                                @include media(540)
+                                                    display: inline
                                         .port_loc
                                             display: flex
                                             align-items: center
@@ -707,6 +841,8 @@
                                     .more_routes
                                         position: relative
                                         --triangle: 10px
+                                        @include media(540)
+                                            top: 16px
                                         .moreRoute
                                             display: flex
                                             align-items: center
@@ -761,11 +897,20 @@
                                                 border-radius: 5px
                                                 display: flex
                                                 flex-direction: column
+                                                @include media(768)
+                                                    padding: 15px
                                                 .more_item
                                                     display: flex
                                                     align-items: center
                                                     gap: 10px
+                                                    svg
+                                                        flex: 0 1 20px
+                                                        min-width: 20px
+                                                        height: 20px
                                                     .route_info
+                                                        @include media(768)
+                                                            flex: 1
+                                                            max-width: 100%
                                                         h6
                                                             font-size: 14px
                                                 .more_path
@@ -778,6 +923,10 @@
                                         background: #00000030
                                         width: 100%
                                         height: 1px 
+                                        @include media(768)
+                                            width: 20%
+                                        @include media(540)
+                                            width: 100%
                                 .tack_cta
                                     .gray
                                         border-color: $text
@@ -805,6 +954,8 @@
                             align-items: center
                             justify-content: space-between
                             border-top: 1px solid #F1F1F1
+                            @include media(768)
+                                padding: 15px
                             .ship_status
                                 p
                                     font-size: 14px
@@ -818,10 +969,14 @@
                                 display: flex
                                 align-items: center
                                 gap: 25px
+                                @include media(540)
+                                    gap: 10px
                                 p
                                     font-weight: 600
                                     font-size: 16px
                                     color: $text
+                                    @include media(540)
+                                        font-size: 14px
                                     &.price
                                         color: $black
                 // Forget Password
@@ -835,13 +990,21 @@
                     justify-content: center
                     .forget_container
                         width: 100%
-                        max-width: 340px
+                        max-width: 360px
+                        padding: 30px 20px
                         text-align: center
                         .title
                             .icon
                                 width: 115px
                                 height: 115px
                                 margin: 0 auto 20px
+                                @include media(768)
+                                    width: 80px
+                                    height: 80px
+                                    margin: 0 auto 10px
+                                @include media(540)
+                                    width: 70px
+                                    height: 70px
                             h4
                                 font-size: 20px
                         .form
@@ -877,6 +1040,12 @@
                             align-items: center
                             justify-content: space-between
                             border-bottom: 1px solid #F1F1F1
+                            @include media(1280)
+                                padding: 15px
+                            @include media(540)
+                                flex-direction: column
+                                gap: 10px
+                                align-items: start
                             .orderno
                                 h6
                                     font-size: 16px
@@ -895,17 +1064,35 @@
                             flex-wrap: wrap
                             align-items: center
                             border-bottom: 1px solid #F1F1F1
+                            @include media(1280)
+                                padding: 15px
+                            @include media(540)
+                                flex-direction: column
                             .shiptofro_col
                                 flex: 1
                                 display: flex
                                 flex-wrap: wrap
                                 gap: 20px
                                 padding: 15px 0
+                                @include media(1280)
+                                    gap: 15px
                                 &:not(:last-child)
                                     border-right: 1px solid #0000002E
                                     padding-right: 30px
+                                    @include media(1280)
+                                        padding-right: 20px
+                                    @include media(540)
+                                        padding: 0
+                                        padding-bottom: 20px
+                                        border-right: none
+                                        border-bottom: 1px solid #0000002E
                                 &:last-child
                                     padding-left: 30px
+                                    @include media(1280)
+                                        padding-left: 20px
+                                    @include media(540)
+                                        padding: 0
+                                        padding-top: 20px
                                 .icon
                                     flex: 0 1 55px
                                     width: 55px
@@ -915,6 +1102,14 @@
                                     display: flex
                                     align-items: center
                                     justify-content: center
+                                    @include media(1280)
+                                        flex: 0 1 45px
+                                        width: 45px
+                                        height: 45px
+                                    @include media(768)
+                                        flex: 0 1 40px
+                                        width: 40px
+                                        height: 40px
                                     svg
                                         width: 50%
                                         height: 50%
@@ -924,6 +1119,8 @@
                                         font-size: 16px
                                         line-height: 1.2
                                         margin-bottom: 8px
+                                        @include media(768)
+                                            margin-bottom: 4px
                                     .username
                                         font-size: 16px
                                         line-height: 1.2
@@ -936,6 +1133,7 @@
                                         margin-bottom: 15px
                                     .mobile
                                         display: flex
+                                        flex-wrap: wrap
                                         align-items: center
                                         gap: 5px
                                         font-size: 14px
@@ -947,8 +1145,17 @@
                             display: flex
                             flex-wrap: wrap
                             border-bottom: 1px solid #F1F1F1
+                            @include media(768)
+                                flex-direction: column
                             .ship_det_wrap
                                 padding: 35px 40px
+                                @include media(1280)
+                                    padding: 25px
+                                    max-width: 48%
+                                @include media(768)
+                                    max-width: 100%
+                                @include media(540)
+                                    padding: 15px
                                 flex: 1
                                 >h6
                                     font-size: 18px
@@ -969,6 +1176,13 @@
                                             color: #4C4C4C
                             .ship_doc_wrap
                                 padding: 35px 40px
+                                @include media(1280)
+                                    padding: 25px 20px
+                                    max-width: 52%
+                                @include media(768)
+                                    max-width: 100%
+                                @include media(540)
+                                    padding: 15px
                                 flex: 1
                                 >h6
                                     font-size: 18px
@@ -976,6 +1190,8 @@
                         
                         .ship_track_wrap
                             padding: 20px 20px 50px 20px
+                            @include media(540)
+                                padding: 15px 15px 30px 15px
                             .ship_track_col
                                 &:not(:last-child)
                                     margin-bottom: 10px
@@ -998,8 +1214,13 @@
                                     transition: .3s ease
                                     border-radius: 5px
                                     cursor: pointer
+                                    @include media(540)
+                                        padding: 8px 10px
                                     h6
                                         font-size: 18px
+                                        @include media(540)
+                                            flex: 1
+                                            font-size: 14px
                                     .icon
                                         flex: 0 1 auto
                                         --size: 18px
@@ -1026,6 +1247,10 @@
                                             height: 100%
                                 article
                                     padding-left: 35px
+                                    @include media(1280)
+                                        padding-left: 25px
+                                    @include media(540) 
+                                        padding-left: 15px
                                     .history_wrap
                                         border-left: 2px dashed #A6A6A6
                                         .history_col
@@ -1035,6 +1260,9 @@
                                             margin-left: -10px
                                             position: relative
                                             z-index: 0
+                                            @include media(540) 
+                                                gap: 10px
+                                                padding-top: 30px
                                             &.active
                                                 &::before
                                                     height: 100%
@@ -1078,15 +1306,22 @@
                                                     font-weight: 600
                                                     color: $text
                                                     line-height: 1.2
+                                                    @include media(540) 
+                                                        font-size: 14px
                                                 .loc
                                                     font-weight: 400
                                                     font-size: 14px
                                                     color: $text
+                                                    margin-top: 5px
                                             .details
                                                 display: flex
                                                 flex-wrap: wrap
                                                 gap: 20px
                                                 margin-top: 10px
+                                                @include media(768) 
+                                                    gap: 10px
+                                                @include media(540) 
+                                                    gap: 5px
                                                 .detinfo
                                                     em, p
                                                         font-size: 14px
@@ -1098,7 +1333,13 @@
                             align-items: center
                             justify-content: space-between
                             border-top: 1px solid #F1F1F1
+                            flex-wrap: wrap
+                            @include media(540) 
+                                padding: 15px
+                                gap: 5px
                             .ship_status
+                                @include media(540) 
+                                    flex: 0 1 100%
                                 p
                                     font-size: 14px
                                     font-weight: 500
@@ -1114,6 +1355,12 @@
                                 display: flex
                                 align-items: center
                                 gap: 25px
+                                @include media(768)
+                                    flex: 0 1 100%
+                                    justify-content: end
+                                    margin-top: 10px
+                                @include media(540)
+                                    gap: 10px
                                 p
                                     font-weight: 600
                                     font-size: 16px
@@ -1445,6 +1692,8 @@
     bottom: 0
     border-radius: 10px
     transition: .5s ease
+    @include media(540) 
+        max-width: 320px
     &.is-open
         transform: translate(-50%, -50%)
         transition: .5s ease
@@ -1459,8 +1708,12 @@
         background: $white
         border-radius: 10px
         max-width: 100%
+        @include media(540) 
+            padding: 15px
         .title
             margin-bottom: 20px
+            @include media(540) 
+                margin-bottom: 15px
             h5
                 font-size: 18px
                 font-weight: 600
@@ -1468,6 +1721,8 @@
     display: grid
     grid-template-columns: repeat(3, 1fr)
     grid-gap: 10px
+    @include media(540) 
+        grid-template-columns: repeat(2, 1fr)
 .upload_doc
     position: relative
     background: #E9E9E9

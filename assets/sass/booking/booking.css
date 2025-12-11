@@ -41,6 +41,22 @@
   --inputsize: 61px;
   --paddingleftright: 5px;
 }
+@media only screen and (max-width: 1280px) {
+  .booking-secA .filter_wrapper .form {
+    gap: 10px;
+  }
+}
+@media only screen and (max-width: 991px) {
+  .booking-secA .filter_wrapper .form {
+    flex-direction: column;
+    padding: 25px 0;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .booking-secA .filter_wrapper .form {
+    --inputsize: 41px;
+  }
+}
 .booking-secA .filter_wrapper .form .form-group::before, .booking-secA .filter_wrapper .form .form-group::after {
   display: none;
 }
@@ -56,8 +72,19 @@
 .booking-secA .filter_wrapper .form .form-group.location-icon {
   border-right: 1px solid rgba(0, 0, 0, 0.1215686275);
 }
+@media only screen and (max-width: 991px) {
+  .booking-secA .filter_wrapper .form .form-group.location-icon {
+    border-right: none;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1215686275);
+  }
+}
 .booking-secA .filter_wrapper .form .form-group.location-icon input {
   background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxOHB4IiBoZWlnaHQ9IjE4cHgiIHZpZXdCb3g9IjAgMCAyNCAyNCI+Cgk8ZyBmaWxsPSJub25lIj4KCQk8cGF0aCBkPSJNMTIgMmE4IDggMCAwIDEgOCA4YzAgNi41LTggMTItOCAxMnMtOC01LjUtOC0xMmE4IDggMCAwIDEgOC04bTAgNWEzIDMgMCAxIDAgMCA2YTMgMyAwIDAgMCAwLTYiIGNsaXAtcnVsZT0iZXZlbm9kZCIgLz4KCQk8cGF0aCBzdHJva2U9IiMwMDAiIHN0cm9rZS13aWR0aD0iMS41IiBkPSJNMjAgMTBjMCA2LjUtOCAxMi04IDEycy04LTUuNS04LTEyYTggOCAwIDEgMSAxNiAwWiIgLz4KCQk8cGF0aCBzdHJva2U9IiMwMDAiIHN0cm9rZS13aWR0aD0iMS41IiBkPSJNMTUgMTBhMyAzIDAgMSAxLTYgMGEzIDMgMCAwIDEgNiAwWiIgLz4KCTwvZz4KPC9zdmc+);
+}
+@media only screen and (max-width: 991px) {
+  .booking-secA .filter_wrapper .form .form-group.container-icon {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1215686275);
+  }
 }
 .booking-secA .filter_wrapper .form .form-group.container-icon .container_wrap {
   cursor: pointer;
@@ -486,6 +513,16 @@
   font-size: 12px;
   color: #4CA6A7;
 }
+@media only screen and (max-width: 991px) {
+  .booking-secA .filter_wrapper .form .btn {
+    margin-top: 30px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .booking-secA .filter_wrapper .form .btn {
+    margin-top: 20px;
+  }
+}
 .booking-secA .filter_wrapper .form .btn:hover svg path {
   fill: none;
   stroke: var(--primary);
@@ -498,16 +535,47 @@
   --gap: 30px;
   gap: var(--gap);
 }
+@media only screen and (max-width: 1280px) {
+  .booking-secB .flex_wrapper {
+    --gap: 20px;
+  }
+}
+@media only screen and (max-width: 991px) {
+  .booking-secB .flex_wrapper {
+    flex-direction: column;
+  }
+}
 .booking-secB .flex_wrapper .colA {
   flex: 0 1 70%;
   max-width: 70%;
   width: 100%;
   height: 100%;
 }
+@media only screen and (max-width: 991px) {
+  .booking-secB .flex_wrapper .colA {
+    flex: 0 1 100%;
+    max-width: 100%;
+  }
+}
 .booking-secB .flex_wrapper .colA .main_wrapper {
   padding: 30px 0 30px 30px;
   border-left: 1px solid var(--primary);
   height: 100%;
+}
+@media only screen and (max-width: 1280px) {
+  .booking-secB .flex_wrapper .colA .main_wrapper {
+    padding: 30px 0 30px 19px;
+  }
+}
+@media only screen and (max-width: 991px) {
+  .booking-secB .flex_wrapper .colA .main_wrapper {
+    padding: 30px 0 0px 30px;
+  }
+}
+@media only screen and (max-width: 800px) {
+  .booking-secB .flex_wrapper .colA .main_wrapper {
+    padding: 30px 0 0px 22px;
+  }
 }
 .booking-secB .flex_wrapper .colA .main_wrapper .route_col {
   width: 100%;
@@ -518,6 +586,11 @@
   position: relative;
   --pointer: 14px;
   transition: 0.5s ease;
+}
+@media only screen and (max-width: 1280px) {
+  .booking-secB .flex_wrapper .colA .main_wrapper .route_col {
+    padding: 15px;
+  }
 }
 .booking-secB .flex_wrapper .colA .main_wrapper .route_col.selected {
   background: #E8FBFB;
@@ -541,11 +614,35 @@
   background: var(--primary);
   transform: translate(-20%, -50%);
 }
+@media only screen and (max-width: 675px) {
+  .booking-secB .flex_wrapper .colA .main_wrapper .route_col::before {
+    left: -5.5%;
+  }
+}
+@media only screen and (max-width: 540px) {
+  .booking-secB .flex_wrapper .colA .main_wrapper .route_col::before {
+    left: -9.5%;
+  }
+}
 .booking-secB .flex_wrapper .colA .main_wrapper .route_col .upper_sec {
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 15px;
+}
+@media only screen and (max-width: 540px) {
+  .booking-secB .flex_wrapper .colA .main_wrapper .route_col .upper_sec {
+    gap: 10px;
+    flex-direction: column;
+  }
+}
+@media only screen and (max-width: 540px) {
+  .booking-secB .flex_wrapper .colA .main_wrapper .route_col .upper_sec:has(.more_routes) .line {
+    margin-bottom: 25px;
+  }
+  .booking-secB .flex_wrapper .colA .main_wrapper .route_col .upper_sec:has(.more_routes) .line:nth-of-type(4) {
+    margin-bottom: 0;
+  }
 }
 .booking-secB .flex_wrapper .colA .main_wrapper .route_col .upper_sec .route_info {
   flex: 0 1 auto;
@@ -661,11 +758,23 @@
   width: 100%;
   height: 1px;
 }
+@media only screen and (max-width: 540px) {
+  .booking-secB .flex_wrapper .colA .main_wrapper .route_col .upper_sec .line {
+    width: 1px;
+    height: 30px;
+  }
+}
 .booking-secB .flex_wrapper .colA .main_wrapper .route_col .lower_sec {
   display: flex;
   align-items: center;
   justify-content: space-between;
   margin-top: 20px;
+}
+@media only screen and (max-width: 768px) {
+  .booking-secB .flex_wrapper .colA .main_wrapper .route_col .lower_sec {
+    flex-direction: column;
+    gap: 10px;
+  }
 }
 .booking-secB .flex_wrapper .colA .main_wrapper .route_col .lower_sec .left_col {
   display: flex;
@@ -699,6 +808,13 @@
   align-items: center;
   gap: 10px;
 }
+@media only screen and (max-width: 540px) {
+  .booking-secB .flex_wrapper .colA .main_wrapper .route_col .lower_sec .right_col {
+    flex-wrap: wrap;
+    flex-direction: column;
+    margin-top: 15px;
+  }
+}
 .booking-secB .flex_wrapper .colA .main_wrapper .route_col .lower_sec .right_col .info {
   display: inline-flex;
   align-items: center;
@@ -731,6 +847,12 @@
   gap: 15px;
   border-bottom: 1px solid rgba(0, 0, 0, 0.1019607843);
 }
+@media only screen and (max-width: 540px) {
+  .booking-secB .flex_wrapper .colA .main_wrapper .route_info_wrap .title {
+    flex-direction: column;
+    align-items: start;
+  }
+}
 .booking-secB .flex_wrapper .colA .main_wrapper .route_info_wrap .title .icon {
   flex: 0 1 50px;
   width: 50px;
@@ -753,16 +875,33 @@
   font-weight: 600;
   line-height: 1.2;
 }
+@media only screen and (max-width: 768px) {
+  .booking-secB .flex_wrapper .colA .main_wrapper .route_info_wrap .title .content h3 {
+    font-size: 22px;
+  }
+}
 .booking-secB .flex_wrapper .colA .main_wrapper .route_info_wrap .title .content p {
   font-size: 14px;
   color: var(--text);
+  margin-top: 5px;
 }
 .booking-secB .flex_wrapper .colA .main_wrapper .route_info_wrap .middle_wrapper {
   padding: 30px 20px 50px;
 }
+@media only screen and (max-width: 768px) {
+  .booking-secB .flex_wrapper .colA .main_wrapper .route_info_wrap .middle_wrapper {
+    padding: 20px 20px 30px;
+  }
+}
 .booking-secB .flex_wrapper .colA .main_wrapper .route_info_wrap .middle_wrapper .top_filter {
   display: flex;
   align-items: center;
+}
+@media only screen and (max-width: 540px) {
+  .booking-secB .flex_wrapper .colA .main_wrapper .route_info_wrap .middle_wrapper .top_filter {
+    flex-direction: column;
+    gap: 30px;
+  }
 }
 .booking-secB .flex_wrapper .colA .main_wrapper .route_info_wrap .middle_wrapper .top_filter .filter_col {
   flex: 1;
@@ -770,6 +909,16 @@
   border-right: 1px solid rgba(0, 0, 0, 0.1411764706);
   --liheight: 34px;
   --boxsize: 15px;
+}
+@media only screen and (max-width: 768px) {
+  .booking-secB .flex_wrapper .colA .main_wrapper .route_info_wrap .middle_wrapper .top_filter .filter_col {
+    padding-right: 20px;
+  }
+}
+@media only screen and (max-width: 540px) {
+  .booking-secB .flex_wrapper .colA .main_wrapper .route_info_wrap .middle_wrapper .top_filter .filter_col {
+    border-right: none;
+  }
 }
 .booking-secB .flex_wrapper .colA .main_wrapper .route_info_wrap .middle_wrapper .top_filter .filter_col h6 {
   font-size: 16px;
@@ -788,6 +937,18 @@
   display: flex;
   align-items: center;
   gap: 15px;
+}
+@media only screen and (max-width: 768px) {
+  .booking-secB .flex_wrapper .colA .main_wrapper .route_info_wrap .middle_wrapper .top_filter .enter_container {
+    flex: 1;
+    padding-left: 20px;
+    flex-wrap: wrap;
+  }
+}
+@media only screen and (max-width: 540px) {
+  .booking-secB .flex_wrapper .colA .main_wrapper .route_info_wrap .middle_wrapper .top_filter .enter_container {
+    padding-left: 0;
+  }
 }
 .booking-secB .flex_wrapper .colA .main_wrapper .route_info_wrap .middle_wrapper .top_filter .enter_container .icon {
   flex: 0 1 28px;
@@ -812,6 +973,12 @@
   font-size: 40px;
   font-weight: 500;
   width: 90px;
+}
+@media only screen and (max-width: 768px) {
+  .booking-secB .flex_wrapper .colA .main_wrapper .route_info_wrap .middle_wrapper .top_filter .enter_container .containerBtn {
+    width: 100%;
+    flex: 0 1 100%;
+  }
 }
 .booking-secB .flex_wrapper .colA .main_wrapper .route_info_wrap .middle_wrapper .top_filter .enter_container .containerBtn:focus::-moz-placeholder {
   opacity: 0;
@@ -843,6 +1010,11 @@
   --labelbefore: #666;
   --labelafter: #666;
 }
+@media only screen and (max-width: 540px) {
+  .booking-secB .flex_wrapper .colA .main_wrapper .route_info_wrap .middle_wrapper .filter_col .flex, .booking-secB .flex_wrapper .colA .main_wrapper .route_info_wrap .middle_wrapper .filter_wrap .flex {
+    gap: 15px;
+  }
+}
 .booking-secB .flex_wrapper .colA .main_wrapper .route_info_wrap .middle_wrapper .filter_col .flex .form-group, .booking-secB .flex_wrapper .colA .main_wrapper .route_info_wrap .middle_wrapper .filter_wrap .flex .form-group {
   flex: 1;
 }
@@ -855,6 +1027,11 @@
 .booking-secB .flex_wrapper .colA .main_wrapper .route_info_wrap .middle_wrapper .filter_col .flex .form-group.weight input, .booking-secB .flex_wrapper .colA .main_wrapper .route_info_wrap .middle_wrapper .filter_wrap .flex .form-group.weight input {
   padding-right: 25px;
 }
+@media only screen and (max-width: 540px) {
+  .booking-secB .flex_wrapper .colA .main_wrapper .route_info_wrap .middle_wrapper .filter_col .flex .form-group.weight input, .booking-secB .flex_wrapper .colA .main_wrapper .route_info_wrap .middle_wrapper .filter_wrap .flex .form-group.weight input {
+    padding-right: 22px;
+  }
+}
 .booking-secB .flex_wrapper .colA .main_wrapper .route_info_wrap .lower_wrapper {
   background: #E8FBFB;
   border-bottom-left-radius: 5px;
@@ -863,6 +1040,12 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+}
+@media only screen and (max-width: 540px) {
+  .booking-secB .flex_wrapper .colA .main_wrapper .route_info_wrap .lower_wrapper {
+    flex-direction: column;
+    gap: 10px;
+  }
 }
 .booking-secB .flex_wrapper .colA .main_wrapper .route_info_wrap .lower_wrapper .price_wrap p {
   font-size: 14px;
@@ -873,6 +1056,16 @@
   font-weight: 600;
   font-size: 25px;
 }
+@media only screen and (max-width: 768px) {
+  .booking-secB .flex_wrapper .colA .main_wrapper .route_info_wrap .lower_wrapper .price_wrap h6 {
+    font-size: 22px;
+  }
+}
+@media only screen and (max-width: 540px) {
+  .booking-secB .flex_wrapper .colA .main_wrapper .route_info_wrap .lower_wrapper .price_wrap h6 {
+    font-size: 20px;
+  }
+}
 .booking-secB .flex_wrapper .colA .main_wrapper .route_info_wrap .lower_wrapper .btn {
   max-width: 200px;
   --height: 46px;
@@ -882,6 +1075,12 @@
   max-width: calc(100% - (70% - var(--gap)));
   width: 100%;
 }
+@media only screen and (max-width: 991px) {
+  .booking-secB .flex_wrapper .colB {
+    max-width: 100%;
+    margin-bottom: 40px;
+  }
+}
 .booking-secB .flex_wrapper .colB .form_wrapper {
   position: sticky;
   top: calc(var(--headerheight) + 20px);
@@ -889,6 +1088,11 @@
   background: var(--white);
   padding: 30px 20px 50px;
   border-radius: 5px;
+}
+@media only screen and (max-width: 991px) {
+  .booking-secB .flex_wrapper .colB .form_wrapper {
+    position: static;
+  }
 }
 .booking-secB .flex_wrapper .colB .form_wrapper .form-body.forget-pass .back-to-login, .booking-secB .flex_wrapper .colB .form_wrapper .form-body.signupForm .back-to-login, .booking-secB .flex_wrapper .colB .form_wrapper .form-body.loginForm .back-to-login {
   display: inline-flex;
@@ -991,6 +1195,7 @@
   font-weight: 600;
   font-size: 20px;
   margin-bottom: 15px;
+  line-height: 1.2;
 }
 .booking-secB .flex_wrapper .colB .form_wrapper .form {
   margin: 10px 0;
@@ -1016,9 +1221,19 @@
 .booking-secB .flex_wrapper .colB .form_wrapper .form .btn_wrap {
   margin-top: 10px;
 }
+@media only screen and (max-width: 1280px) {
+  .booking-secB .flex_wrapper .colB .form_wrapper .form .btn_wrap {
+    flex-direction: column;
+  }
+}
 .booking-secB .flex_wrapper .colB .form_wrapper .form .btn_wrap .btn {
   flex: 1;
   max-width: 100%;
+}
+@media only screen and (max-width: 1280px) {
+  .booking-secB .flex_wrapper .colB .form_wrapper .form .btn_wrap .btn {
+    flex: 0 1 auto;
+  }
 }
 .booking-secB .flex_wrapper .colB .form_wrapper .form .sign_wrap {
   display: flex;

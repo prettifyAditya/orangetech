@@ -42,6 +42,27 @@
   grid-template-columns: repeat(3, 1fr);
   grid-gap: 15px;
 }
+@media only screen and (max-width: 768px) {
+  .service-listingA .service_wrapper {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media only screen and (max-width: 540px) {
+  .service-listingA .service_wrapper {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+@media only screen and (max-width: 991px) {
+  .service-listingA .service_wrapper .service_col figcaption {
+    padding: 0 10px 20px;
+  }
+  .service-listingA .service_wrapper .service_col figcaption h6 {
+    font-size: 18px;
+  }
+  .service-listingA .service_wrapper .service_col figcaption p {
+    font-size: 14px;
+  }
+}
 
 .banner.serviceD-banner::before {
   background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.5) 100%), linear-gradient(0deg, rgba(0, 0, 0, 0) 14%, rgba(0, 0, 0, 0.6) 100%);
@@ -63,18 +84,49 @@
 .banner.serviceD-banner .bg .banner-wrapper .container-fluid .content h2, .banner.serviceD-banner .bg .banner-wrapper .container .content h2 {
   font-weight: 700;
 }
+@media only screen and (max-width: 768px) {
+  .banner.serviceD-banner .bg .banner-wrapper .container-fluid .content h2, .banner.serviceD-banner .bg .banner-wrapper .container .content h2 {
+    font-size: 24px;
+  }
+}
+@media only screen and (max-width: 540px) {
+  .banner.serviceD-banner .bg .banner-wrapper .container-fluid .content h2, .banner.serviceD-banner .bg .banner-wrapper .container .content h2 {
+    font-size: 20px;
+  }
+}
 
+@media only screen and (max-width: 991px) {
+  .service-detailA {
+    padding-bottom: 0;
+  }
+}
 .service-detailA .service_wrapper {
   --gap: 50px;
   gap: var(--gap);
+}
+@media only screen and (max-width: 1280px) {
+  .service-detailA .service_wrapper {
+    --gap: 40px;
+  }
 }
 .service-detailA .service_wrapper .colA {
   flex: 1;
   max-width: calc(70% - var(--gap));
 }
+@media only screen and (max-width: 991px) {
+  .service-detailA .service_wrapper .colA {
+    max-width: 100%;
+  }
+}
 .service-detailA .service_wrapper .colB {
   flex: 0 1 30%;
   max-width: 30%;
+}
+@media only screen and (max-width: 991px) {
+  .service-detailA .service_wrapper .colB {
+    flex: 0 1 100%;
+    max-width: 100%;
+  }
 }
 .service-detailA .service_wrapper .colB .form_wrapper {
   width: 100%;
@@ -83,6 +135,17 @@
   position: sticky;
   top: calc(var(--headerheight) + 20px);
 }
+@media only screen and (max-width: 1280px) {
+  .service-detailA .service_wrapper .colB .form_wrapper {
+    padding: 25px;
+  }
+}
+@media only screen and (max-width: 991px) {
+  .service-detailA .service_wrapper .colB .form_wrapper {
+    position: relative;
+    top: unset;
+  }
+}
 .service-detailA .service_wrapper .colB .form_wrapper .title {
   text-align: center;
 }
@@ -90,17 +153,52 @@
   max-width: 60px;
   margin: 0 auto;
 }
+@media only screen and (max-width: 1280px) {
+  .service-detailA .service_wrapper .colB .form_wrapper .title .icon {
+    max-width: 50px;
+  }
+}
+@media only screen and (max-width: 540px) {
+  .service-detailA .service_wrapper .colB .form_wrapper .title .icon {
+    max-width: 40px;
+  }
+}
 .service-detailA .service_wrapper .colB .form_wrapper .title h4 {
   font-size: 28px;
   font-weight: 600;
+}
+@media only screen and (max-width: 1280px) {
+  .service-detailA .service_wrapper .colB .form_wrapper .title h4 {
+    font-size: 24px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .service-detailA .service_wrapper .colB .form_wrapper .title h4 {
+    font-size: 22px;
+  }
+}
+@media only screen and (max-width: 540px) {
+  .service-detailA .service_wrapper .colB .form_wrapper .title h4 {
+    font-size: 20px;
+  }
 }
 .service-detailA .service_wrapper .colB .form_wrapper .title p {
   color: var(--text);
   font-weight: 500;
 }
+@media only screen and (max-width: 1280px) {
+  .service-detailA .service_wrapper .colB .form_wrapper .title p {
+    font-size: 14px;
+  }
+}
 .service-detailA .service_wrapper .colB .form_wrapper .form {
   margin-top: 30px;
   --gaptb: 25px;
+}
+@media only screen and (max-width: 1280px) {
+  .service-detailA .service_wrapper .colB .form_wrapper .form {
+    margin-top: 20px;
+  }
 }
 .service-detailA .service_wrapper .colB .form_wrapper .btn_wrap {
   width: 100%;
